@@ -1,7 +1,9 @@
 package com.sanket.feastofooddelivery.activities
 
-
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.animation.AnimationUtils
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +16,10 @@ class SplashScreenActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_splash_screen)
 
+        Handler(Looper.getMainLooper()).postDelayed({
+            startActivity(Intent(this, SignUpActivity::class.java))
+            finish()
+        }, 3000)
 
 
 
