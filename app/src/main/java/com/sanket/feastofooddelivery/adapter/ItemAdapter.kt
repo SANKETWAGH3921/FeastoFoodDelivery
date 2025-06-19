@@ -1,7 +1,5 @@
 package com.sanket.feastofooddelivery.adapter
 
-
-
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -13,9 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sanket.feastofooddelivery.R
 import com.sanket.feastofooddelivery.models.ItemModel
 
-
-class ItemAdapter(private val itemList: List<ItemModel>) :
-    RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
+class ItemAdapter(
+    private val itemList: List<ItemModel>,
+    private val onItemClick: ((ItemModel, Int) -> Unit)? = null // Optional click listener
+) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val itemImage: ImageView = itemView.findViewById(R.id.item_image)
@@ -35,7 +34,7 @@ class ItemAdapter(private val itemList: List<ItemModel>) :
         holder.tvItemName.text = item.itemName
         holder.tvPrice.text = "₹${item.price}"
 
-        // Using itemName as drawable image name
+        // Load image from drawable using itemName
         val imageResId = context.resources.getIdentifier(
             item.itemName.lowercase(), "drawable", context.packageName
         )
@@ -45,6 +44,11 @@ class ItemAdapter(private val itemList: List<ItemModel>) :
         } else {
             holder.itemImage.setImageResource(R.drawable.ic_launcher_background)
             Toast.makeText(context, "Image not found for ${item.itemName}", Toast.LENGTH_SHORT).show()
+        }
+
+        // Only handle click if listener is provided
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(item, imageResId)
         }
     }
 

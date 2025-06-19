@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_Cprofile"
+        android:icon="@drawable/profile"
+        android:title="Profile"/>
+    <item
+        android:id="@+id/nav_Clogout"
+        android:icon="@drawable/logout"
+        android:title="Logout"/>
+</menu>
