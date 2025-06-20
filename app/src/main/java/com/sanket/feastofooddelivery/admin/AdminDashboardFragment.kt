@@ -30,21 +30,21 @@ class AdminDashboardFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_admin_dashboard, container, false)
 
-        // Initialize views
+
         navIcon = view.findViewById(R.id.navimg)
         recyclerViewItems = view.findViewById(R.id.recyclerViewItems)
 
-        // Set up navigation icon click
+
         navIcon.setOnClickListener {
             (activity as? AdminActivity)?.openDrawerFromFragment()
         }
 
-        // Set up RecyclerView
+
         recyclerViewItems.layoutManager = LinearLayoutManager(requireContext())
         itemAdapter = ItemAdapter(itemList)
         recyclerViewItems.adapter = itemAdapter
 
-        // Load data from Firebase
+
         loadItemsFromFirebase()
 
         return view

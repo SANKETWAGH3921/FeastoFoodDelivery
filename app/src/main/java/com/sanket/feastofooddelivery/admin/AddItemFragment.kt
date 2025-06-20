@@ -22,7 +22,7 @@ class AddItemFragment : Fragment() {
     private lateinit var etDate: TextInputEditText
     private lateinit var uploadButton: Button
 
-    private var imageUri: Uri? = null // Optional if you plan to add image later
+    private var imageUri: Uri? = null
     private val categoryList = listOf("Pizza", "Burger", "Cake", "Dessert", "Veg", "Non-Veg")
 
     private val imagePicker = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->

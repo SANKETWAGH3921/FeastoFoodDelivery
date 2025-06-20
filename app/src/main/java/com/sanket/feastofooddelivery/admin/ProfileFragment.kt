@@ -27,7 +27,7 @@ class ProfileFragment : Fragment() {
         tvEmail = view.findViewById(R.id.tvEmail)
         tvUserId = view.findViewById(R.id.tvUserId)
 
-        val adminUserId = "SOJWAL01" // If you're using Firebase Auth, replace with uid
+        val adminUserId = "SOJWAL01"
 
         database = FirebaseDatabase.getInstance().getReference("Users/Admin/$adminUserId")
 

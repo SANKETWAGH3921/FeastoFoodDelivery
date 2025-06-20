@@ -39,7 +39,7 @@ class LogoutFragment : Fragment() {
 
         builder.setNegativeButton("Cancel") { dialog, _ ->
             dialog.dismiss()
-            requireActivity().onBackPressed() // optional
+            requireActivity().onBackPressed()
         }
 
         builder.setCancelable(false)

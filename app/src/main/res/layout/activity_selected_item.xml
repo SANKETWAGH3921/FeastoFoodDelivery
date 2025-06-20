@@ -5,12 +5,13 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         card_view:cardCornerRadius="16dp"
         card_view:cardElevation="8dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:padding="16dp"
@@ -33,7 +34,7 @@
                     android:scaleType="centerCrop" />
 
 
-            <!-- Text Info -->
+
             <TextView
                 android:id="@+id/selected_name"
                 android:layout_width="wrap_content"
@@ -58,7 +59,6 @@
                 android:textSize="16sp"
                 android:textColor="@android:color/darker_gray" />
 
-            <!-- Quantity Selector -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -97,17 +97,35 @@
                     android:textColor="@android:color/white" />
             </LinearLayout>
 
-            <!-- Add to Cart Button -->
-            <Button
-                android:id="@+id/addtocart"
-                android:layout_width="180dp"
-                android:layout_height="50dp"
-                android:text="Add To Cart"
-                android:textSize="20sp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="30dp"
-                android:layout_gravity="center"
-                android:backgroundTint="@color/btncolor" />
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:layout_marginBottom="40dp">
+
+
+              <Button
+                  android:id="@+id/btnbuynow"
+                  android:layout_width="150dp"
+                  android:layout_height="50dp"
+                  android:text="Buy Now"
+                  android:textSize="20sp"
+                  android:layout_marginTop="10dp"
+                  android:layout_marginStart="10dp"
+                  android:backgroundTint="@color/btncolor" />
+
+
+              <Button
+                  android:id="@+id/addtocart"
+                  android:layout_width="160dp"
+                  android:layout_height="50dp"
+                  android:text="Add To Cart"
+                  android:textSize="20sp"
+                  android:layout_marginTop="10dp"
+                  android:layout_marginStart="10dp"
+                  android:backgroundTint="@color/black" />
+
+          </LinearLayout>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

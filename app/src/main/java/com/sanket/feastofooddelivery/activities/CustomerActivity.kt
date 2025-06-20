@@ -31,7 +31,14 @@ class CustomerActivity : AppCompatActivity() {
         bottomNavigation.itemIconTintList = null
         navigationView.itemIconTintList = null
 
-        replaceFragment(HomeFragment())
+
+        val goToHome = intent.getBooleanExtra("goToHome", false)
+
+        if (goToHome) {
+            replaceFragment(HomeFragment())
+        } else {
+            replaceFragment(HomeFragment()) // default fragment
+        }
 
         bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {

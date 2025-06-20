@@ -34,7 +34,7 @@ class ItemAdapter(
         holder.tvItemName.text = item.itemName
         holder.tvPrice.text = "₹${item.price}"
 
-        // Load image from drawable using itemName
+
         val imageResId = context.resources.getIdentifier(
             item.itemName.lowercase(), "drawable", context.packageName
         )
@@ -46,7 +46,7 @@ class ItemAdapter(
             Toast.makeText(context, "Image not found for ${item.itemName}", Toast.LENGTH_SHORT).show()
         }
 
-        // Only handle click if listener is provided
+
         holder.itemView.setOnClickListener {
             onItemClick?.invoke(item, imageResId)
         }
